@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -18,8 +18,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function LoginBody() {
+const Login = (props) => {
+
   const classes = useStyles();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  //on submission of the form
+  const onSubmit = (e) =>{
+    e.preventDefault()
+    //write your logic for on submission and validation here
+    
+  }
+
 
   return (
       <React.Fragment>
@@ -29,6 +42,8 @@ export default function LoginBody() {
       
       <Paper className={classes.root}>
      <InputField
+    value = {email}
+    onChange = {setEmail}
      label={"email"}
      type={"email"}
      required={true}
@@ -36,6 +51,8 @@ export default function LoginBody() {
      />
 
     <InputField
+        value = {password}
+        onChange = {setPassword}
         label={"password"}
         type={"password"}
         required={true}
@@ -45,6 +62,7 @@ export default function LoginBody() {
       name={"Don't have an account ?"}
       />
       <Button
+      onClick={onSubmit}
       label={"login"}
       fullWidth={true}
       />
@@ -57,3 +75,5 @@ export default function LoginBody() {
   
   );
 }
+
+export default Login;

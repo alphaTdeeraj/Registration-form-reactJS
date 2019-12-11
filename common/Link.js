@@ -10,14 +10,11 @@ const useStyles = makeStyles(theme => ({
     '& > * + *': {
       marginLeft: theme.spacing(4),
     },
-    link:{
-        marginLeft:40,
-    }
   },
  
 }));
 
-export default function Links(props) {
+const Links = (props) => {
   const classes = useStyles();
   const preventDefault = event => console.log("presed");
 
@@ -29,3 +26,6 @@ export default function Links(props) {
     </Typography>
   );
 }
+
+
+export default Links

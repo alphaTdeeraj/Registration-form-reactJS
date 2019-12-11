@@ -21,12 +21,14 @@ const useStyles = makeStyles(theme => ({
 
 
 
-export default function InputField(props) {
+const InputField = (props) => {
     const classes = useStyles();
     return (
       <Container className={classes.container}>
         <form className={classes.root} noValidate autoComplete="off">
         <TextField id="standard-basic" 
+            value ={props.value}
+            onChange = { (e) => props.onChange(e.target.value)}
             label={props.label} 
             color="primary"
             size={props.size}
@@ -39,3 +41,4 @@ export default function InputField(props) {
 }
 
 
+export default InputField;

@@ -11,16 +11,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Types(props) {
+const  Heading = (props) =>{
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
 
-      <Typography variant="h3" gutterBottom>
-        {props.name}
-      </Typography>
+    <Typography variant="h3" gutterBottom>
+      {props.name}
+    </Typography>
       
     </div>
   );
 }
+export default Heading;

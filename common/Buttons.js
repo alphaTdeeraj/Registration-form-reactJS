@@ -63,6 +63,7 @@ export default function CustomizedButtons(props) {
   return (
     <Container className={classes.container}>
       <BootstrapButton 
+      onClick={(e) =>props.onClick(e)}
       variant="contained" 
       color="primary" disableRipple 
       className={classes.margin}
