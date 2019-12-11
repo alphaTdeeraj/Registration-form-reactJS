@@ -21,6 +21,25 @@ const useStyles = makeStyles(theme => ({
 const SignUp = () => {
   const classes = useStyles();
 
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+
+  const onSubmit = (e) =>{
+    e.preventDefault();
+    if(!email || !password1 || !password2){
+      alert("Please provide all the data")
+    }
+    if(password1 !== password2){
+      // show an alert showing password didn't matched
+      
+    }
+    else{
+        //write the login for handle the submission and clean the data
+      
+    }
+  }
+
   return (
       <React.Fragment>
       <CssBaseline />
@@ -29,6 +48,8 @@ const SignUp = () => {
       
       <Paper className={classes.root}>
      <InputField
+     value ={email}
+     onChange = {setEmail}
      label={"email"}
      type={"email"}
      required={true}
@@ -36,12 +57,16 @@ const SignUp = () => {
      />
 
     <InputField
+        value = {password1}
+        onChange = {setPassword1}
         label={"password"}
         type={"password"}
         required={true}
         fullWidth={true}
         />
         <InputField
+        value = {password2}
+        onChange = {setPassword2}
         label={"Confirm-password"}
         type={"password"}
         required={true}
@@ -51,6 +76,7 @@ const SignUp = () => {
       name={"Already have an account ?"}
       />
       <Button
+      onClick = {onSubmit}
       label={"login"}
       fullWidth={true}
       />

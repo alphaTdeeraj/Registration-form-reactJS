@@ -39,12 +39,6 @@ const BootstrapButton = withStyles({
       boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
     },
   },
-  container:{
-    display:"flex",
-      justifyContent:"center",
-      marginTop:50
-      
-  }
 })(Button);
 
 
@@ -61,7 +55,7 @@ const useStyles = makeStyles(theme => ({
 export default function CustomizedButtons(props) {
   const classes = useStyles();
   return (
-    <Container className={classes.container}>
+    <Container>
       <BootstrapButton 
       onClick={(e) =>props.onClick(e)}
       variant="contained" 

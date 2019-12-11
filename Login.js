@@ -29,7 +29,12 @@ const Login = (props) => {
   //on submission of the form
   const onSubmit = (e) =>{
     e.preventDefault()
-    //write your logic for on submission and validation here
+    if(!email || !password){
+      alert("please fill all the data")
+    }
+    else{
+      //write the logic for handling the submission and clean the data
+    }
     
   }
 

@@ -25,8 +25,9 @@ const InputField = (props) => {
     const classes = useStyles();
     return (
       <Container className={classes.container}>
-        <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="standard-basic" 
+        <form className={classes.root} noValidate={false} autoComplete="off">
+        <TextField 
+
             value ={props.value}
             onChange = { (e) => props.onChange(e.target.value)}
             label={props.label} 
@@ -34,7 +35,7 @@ const InputField = (props) => {
             size={props.size}
             fullwidth={props.fullwidth}
             type={props.type}
-            required={props.required}/>
+            required/>
       </form>
       </Container>
     )
